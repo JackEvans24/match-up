@@ -8,9 +8,8 @@ namespace Assets.Scripts.Managers
         [SerializeField] private AudioSource audioSource;
 
         [Header("Sounds")]
-        [SerializeField] private AudioClip positiveSound;
         [SerializeField] private AudioClip neutralSound;
-        [SerializeField] private AudioClip negativeSound;
+        [SerializeField] private AudioClip basicSound;
         [SerializeField] private AudioClip bonusSound;
 
         public void TilesScored(ScoreType scoreType)
@@ -19,14 +18,11 @@ namespace Assets.Scripts.Managers
 
             switch (scoreType)
             {
-                case ScoreType.Positive:
-                    clip = positiveSound;
+                case ScoreType.Basic:
+                    clip = basicSound;
                     break;
-                case ScoreType.Neutral:
+                case ScoreType.None:
                     clip = neutralSound;
-                    break;
-                case ScoreType.Negative:
-                    clip = negativeSound;
                     break;
                 case ScoreType.Bonus:
                     clip = bonusSound;
