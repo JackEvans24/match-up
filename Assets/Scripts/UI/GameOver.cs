@@ -20,9 +20,8 @@ namespace Assets.Scripts.UI
             canvasGroup.interactable = true;
         }
 
-        public void Restart()
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+        public void Restart() => SceneManager.LoadScene((int)Scenes.Game);
+
+        public void LoadMenu() => SceneManager.LoadScene((int)Scenes.Menu);
     }
 }
