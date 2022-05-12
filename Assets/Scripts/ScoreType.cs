@@ -2,9 +2,8 @@
 {
     public enum ScoreType
     {
-        Positive,
-        Neutral,
-        Negative,
+        Basic,
+        None,
         Bonus
     }
 }

@@ -51,16 +51,20 @@ namespace Assets.Scripts
                 if (spacesToCheck.Count > 0)
                 {
                     var roundPoints = 0;
+                    var hasScore = false;
+
                     foreach (var space in spacesToCheck)
                     {
                         var spacePoints = space.CalculatePointsGivenTile(tile);
                         currentPlayer.AddPoints(spacePoints);
                         roundPoints += spacePoints;
 
+                        hasScore |= spacePoints != 0;
+
                         coroutines.Add(StartCoroutine(space.Animate(spacePoints)));
                     }
 
-                    onTilesScored?.Raise(Score.GetScoreType(roundPoints));
+                    onTilesScored?.Raise(hasScore ? ScoreType.Basic : ScoreType.None);
                     onScoreUpdated?.Raise(currentPlayer);
                 }
 
