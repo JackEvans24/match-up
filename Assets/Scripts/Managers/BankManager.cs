@@ -64,8 +64,8 @@ namespace Assets.Scripts.Managers
 
         private Vector2 GetBankTilePosition(int i)
         {
-            var gridCenter = (Vector2)GridManager.Instance.GridDimensions * 0.5f;
-            var centerOffset = i - ((maxTileCount - 0.5f) / 2);
+            var gridCenter = ((Vector2)GridManager.Instance.GridDimensions - Vector2.one) * 0.5f;
+            var centerOffset = ((maxTileCount - 1f) / 2) - i;
 
             return new Vector2(gridCenter.x + bankXOffset, gridCenter.y + (centerOffset * bankTileSpacing));
         }
