@@ -1,5 +1,7 @@
 # Forces of Nature
 
+![Forces of Nature banner](./Docs/banner.png "Forces of Nature banner")
+
 A mobile match-three game for two players, built in Unity for Android.
 
 ## How to play
